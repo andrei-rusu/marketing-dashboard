@@ -14,6 +14,7 @@ SEG Ad Auction - Java FX Project
 ====================================
 
 This project contains:
+
 	+ src : contains the Java source files for this application
 	+ resources (dependency) : contains images used in the application and the html user guide
 	+ libs (dependency) : contains libraries used in the application
