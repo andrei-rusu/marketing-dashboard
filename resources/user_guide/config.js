@@ -1,0 +1,1 @@
+IDRViewer.config = {"pagecount":5,"title":"Ad Dashboard User Guide","author":"Esmiralda Shirinova \u2013 es1g1","fileName":"Marketing_Dashboard_User_Guide.pdf","bounds":[[908,1286],[908,1286],[908,1286],[908,1286],[908,1286]],"bookmarks":[],"thumbnailType":"jpg","pageType":"html","pageLabels":[]};

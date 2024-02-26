@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1024.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.MainPanelController">
+   <children>
+      <TextField fx:id="campaignName" disable="true" layoutX="7.0" layoutY="14.0" prefHeight="56.0" prefWidth="488.0" text="Campaign Name" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="530.0" />
+      <AnchorPane layoutX="599.0" layoutY="4.0" prefHeight="77.0" prefWidth="511.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="4.0">
+         <children>
+            <Label layoutX="58.0" layoutY="4.0" text="Chart Type" />
+            <Button fx:id="displayButton" layoutX="376.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleDisplayChart" prefHeight="56.0" prefWidth="135.0" text="Display Chart" />
+            <Label layoutX="222.0" layoutY="4.0" text="Time Granularity" />
+            <ComboBox fx:id="timeGranularity" layoutX="191.0" layoutY="32.0" prefHeight="32.0" prefWidth="172.0" promptText="Select time granularity" />
+            <ComboBox fx:id="chartType" layoutX="8.0" layoutY="32.0" prefHeight="32.0" prefWidth="172.0" promptText="Select a Chart" />
+         </children>
+      </AnchorPane>
+      <SplitPane dividerPositions="0.23366336633663368" layoutX="7.0" layoutY="84.0" prefHeight="591.0" prefWidth="1011.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="84.0">
+        <items>
+            <AnchorPane maxWidth="300.0" prefHeight="588.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="importButton" defaultButton="true" layoutX="30.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleImport" prefHeight="50.0" prefWidth="173.0" text="Import CSV Files" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="8.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="resetFilt" layoutX="32.0" layoutY="543.0" mnemonicParsing="false" onAction="#handleReset" prefHeight="32.0" prefWidth="172.0" text="Reset Filters" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="28.0" />
+                  <Button fx:id="applyFilt" layoutX="32.0" layoutY="478.0" mnemonicParsing="false" onAction="#handleApply" prefHeight="56.0" prefWidth="172.0" text="Apply Filters" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="28.0" />
+                  <Accordion layoutY="216.0" maxHeight="1.7976931348623157E308" prefHeight="254.0" prefWidth="232.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <panes>
+                        <TitledPane prefWidth="232.0" text="Define Bounce Rate">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Slider fx:id="pagesSlider" blockIncrement="1.0" layoutX="126.0" layoutY="84.0" majorTickUnit="1.0" max="5.0" min="1.0" minorTickCount="0" prefHeight="14.0" prefWidth="97.0" showTickLabels="true" snapToTicks="true" value="1.0" />
+                                    <Slider fx:id="timeSlider" blockIncrement="1.0" layoutX="126.0" layoutY="28.0" majorTickUnit="5.0" max="15.0" min="5.0" minorTickCount="4" prefHeight="14.0" prefWidth="97.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+                                    <RadioButton fx:id="timeSpent" layoutX="11.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="105.0" selected="true" text="Time Spent (s)" />
+                                    <RadioButton fx:id="pagesVisited" layoutX="11.0" layoutY="70.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="105.0" text="Pages Visited" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                        </TitledPane>
+                      <TitledPane text="Date Range">
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                           <content>
+                              <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="132.0" prefWidth="211.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="25.0" text="Start Date" />
+                                    <Label layoutX="14.0" layoutY="77.0" text="End Date" />
+                                    <DatePicker fx:id="startDate" editable="false" layoutX="86.0" layoutY="16.0" prefHeight="37.0" prefWidth="135.0" promptText="All Data" showWeekNumbers="true" />
+                                    <DatePicker fx:id="endDate" editable="false" layoutX="86.0" layoutY="69.0" prefHeight="37.0" prefWidth="135.0" promptText="All Data" showWeekNumbers="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                      </TitledPane>
+                      <TitledPane prefHeight="352.0" prefWidth="202.0" text="Audience segments">
+                           <content>
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                  <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="211.0">
+                                       <children>
+                                          <Label layoutX="13.0" layoutY="14.0" text="Gender" />
+                                          <Label layoutX="11.0" layoutY="72.0" text="Age Group" />
+                                          <Label layoutX="12.0" layoutY="159.0" text="Income" />
+                                          <CheckBox fx:id="male" layoutX="16.0" layoutY="40.0" mnemonicParsing="false" selected="true" text="Male">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="female" layoutX="71.0" layoutY="40.0" mnemonicParsing="false" selected="true" text="Female">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="less25" layoutX="16.0" layoutY="102.0" mnemonicParsing="false" selected="true" text="&lt;25">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="range2534" layoutX="71.0" layoutY="102.0" mnemonicParsing="false" selected="true" text="25-34">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="range3544" layoutX="137.0" layoutY="102.0" mnemonicParsing="false" selected="true" text="35-44">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="range4554" layoutX="46.0" layoutY="133.0" mnemonicParsing="false" selected="true" text="45-54">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="low" layoutX="16.0" layoutY="188.0" mnemonicParsing="false" selected="true" text="Low">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="medium" layoutX="69.0" layoutY="188.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="69.0" selected="true" text="Medium">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="high" layoutX="144.0" layoutY="189.0" mnemonicParsing="false" selected="true" text="High">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="great54" layoutX="117.0" layoutY="133.0" mnemonicParsing="false" selected="true" text="&gt;54">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content></ScrollPane>
+                           </content>
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                      </TitledPane>
+                      <TitledPane prefHeight="261.0" prefWidth="233.0" text="Impression Context">
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <CheckBox fx:id="news" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="News" />
+                                    <CheckBox fx:id="social" layoutX="104.0" layoutY="90.0" mnemonicParsing="false" selected="true" text="Social Media" />
+                                    <CheckBox fx:id="hob" layoutX="21.0" layoutY="90.0" mnemonicParsing="false" selected="true" text="Hobbies" />
+                                    <CheckBox fx:id="shop" layoutX="104.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="90.0" selected="true" text="Shopping" />
+                                    <CheckBox fx:id="blog" layoutX="104.0" layoutY="53.0" mnemonicParsing="false" selected="true" text="Blog" />
+                                    <CheckBox fx:id="travel" layoutX="20.0" layoutY="53.0" mnemonicParsing="false" selected="true" text="Travel" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <Separator layoutX="2.0" layoutY="110.0" prefHeight="3.0" prefWidth="232.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" />
+                  <ColorPicker fx:id="colorpick" layoutX="111.0" layoutY="125.0" prefHeight="30.0" prefWidth="114.0" />
+                  <Label layoutX="14.0" layoutY="130.0" prefHeight="21.0" prefWidth="90.0" text="Background" />
+                  <Label layoutX="11.0" layoutY="168.0" prefHeight="21.0" prefWidth="114.0" text="Axis Font Size" />
+                  <ComboBox fx:id="fontSize" layoutX="111.0" layoutY="162.0" prefHeight="32.0" prefWidth="114.0" />
+                  <Button fx:id="exportBtn" layoutX="30.0" layoutY="68.0" mnemonicParsing="false" onAction="#handleExport" prefHeight="31.0" prefWidth="172.0" text="Export PNG File" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="588.0" prefWidth="534.0">
+               <children>
+                  <TabPane fx:id="pane" layoutX="40.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
+                    <tabs>
+                      <Tab closable="false" text="Summary">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                           </content></Tab>
+                      <Tab text="Click Cost Distribution" />
+                        <Tab closable="false" onSelectionChanged="#handleNewTab" text="+" />
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
