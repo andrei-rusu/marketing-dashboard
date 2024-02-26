@@ -29,8 +29,6 @@ This project contains:
 To run this application one can use the runnable jar provided: "increment3.jar".
 Do not remove "resources" and "libs" folder or move the ".jar" file without them!
 
-For the list of contributors, please consult the user manual.
-
 Alternatively, only for Windows users with a JVM installed, the executable "Marketing Dashboard.exe" 
 located in the folder "Marketing Dashboard - Windows" can be used to start up the tool directly.
 Do not remove the other files in this folder for correct functioning of this executable!
@@ -39,3 +37,4 @@ Also for Windows users only, "Marketing Dashboard-1.1.exe" standalone executable
 "Marketing Dashboard - Windows Installer" can be used to run the application in a bundled JVM,
 without the need to have a JVM installed on the machine! (automatic install)
 
+To consult the list of all contributors to this project, please consult the user manual.
