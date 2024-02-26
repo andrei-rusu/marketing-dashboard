@@ -9,8 +9,6 @@ SEG Ad Auction - Java FX Project
 # Software Engineering Group Project
 # Group 2
 
-@credits: credits/Credits.txt
-
 ====================================
 
 This project contains:
@@ -30,6 +28,8 @@ This project contains:
 
 To run this application one can use the runnable jar provided: "increment3.jar".
 Do not remove "resources" and "libs" folder or move the ".jar" file without them!
+
+For the list of contributors, please consult the user manual.
 
 Alternatively, only for Windows users with a JVM installed, the executable "Marketing Dashboard.exe" 
 located in the folder "Marketing Dashboard - Windows" can be used to start up the tool directly.
